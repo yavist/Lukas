@@ -1,0 +1,112 @@
+body{
+    background-color: #F7E9D7;
+}
+
+.voice{
+    background-color: grey;
+}
+
+#happy{
+    position: absolute;
+    left:0;
+    top:0;
+    width:10%;
+    height:100%;
+    transition: ease 1s 0s;
+    border-top-right-radius: 50%;
+}
+
+#happy:hover{
+    transform: scale(1.5);
+}
+
+
+#sad{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:20%;
+    transition: ease 1s 0s;
+    border-bottom-left-radius:20%;
+    border-bottom-right-radius:20%;
+}
+
+#sad:hover{
+    transform: scale(1.5);
+}
+
+#angry{
+    position: absolute;
+    right:0;
+    top:0;
+    width:10%;
+    height:100%;
+    transition: ease 1s 0s;
+    border-top-left-radius: 20%;
+}
+
+#angry:hover{
+    transform: scale(1.5);
+}
+
+#indifferent{
+    position: absolute;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:20%;
+    transition: ease 1s 0s;
+    border-top-right-radius:20%;
+}
+
+#indifferent:hover{
+    transform: scale(1.5);
+}
+
+.container{
+    position: absolute;
+    width:80%;
+    height:30%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+}
+
+.external{
+    height: 120%;
+    transition: ease 1s 0s;
+}
+
+.external:hover{
+    transform: scale(1.25) rotate(20deg);
+}
+
+.startText{
+    position:absolute;
+    width:70%;
+    height: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px;
+    border-style: dashed;
+    background-color: white;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'IBM Plex Mono', monospace;
+    
+}
+
+.startScreen{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F7E9D7;
+    z-index: 21;
+}
