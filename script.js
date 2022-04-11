@@ -83,6 +83,7 @@ function checkCorrect(){
 
 function playSound(path){
     let audio = new Audio(path);
+    document.getElementsByTagName("body")[0].appendChild(audio);
     audio.play();   
 }
 
@@ -113,3 +114,16 @@ document.getElementById("person2").style.fill = '#525E75';
 document.getElementById("person3").style.fill = '#78938A';
 document.getElementById("person4").style.fill = '#92BA92';
 */
+
+function stopAudio(e){
+
+    if(e.key === "z"){
+        var sounds = document.getElementsByTagName('audio');
+        for(i=0; i<sounds.length; i++) sounds[i].pause();
+    } else {
+        console.log("Wrong Key.")
+    }
+   
+}
+
+document.addEventListener('keydown', stopAudio);
