@@ -5,6 +5,8 @@ const colors = [
     "#D49B54"
 ]
 
+let initialGame = true;
+
 
 const emotions = {
     happy: {
@@ -78,7 +80,9 @@ function checkCorrect(){
       }
     let result = arr.every(Boolean)
     
-    if(result) alert("Lösungswort: Aufgewühlt")
+    if(result) setTimeout(() => {
+        alert("Lösungswort: Aufgewühlt")
+    }, 1000); 
 }
 
 function playSound(path){
@@ -102,11 +106,29 @@ function toggleExternals(obj){
 }
 
 function startGame(){
-    for(var obj in emotions) {
-        playSound(emotions[obj].Audio);
-    }
+
+    if(initialGame){
+        for(var obj in emotions) {
+            playSound(emotions[obj].Audio);
+        }
+        initialGame = false;
+        document.getElementById("sad").classList.toggle('chaos1');
+        document.getElementById("happy").classList.toggle('chaos2');
+        document.getElementById("angry").classList.toggle('chaos3');
+        document.getElementById("indifferent").classList.toggle('chaos4');
+    }    
 
     document.getElementById("startScreen").style.visibility = "hidden";
+    document.getElementById("startScreen").style.opacity = 0;
+
+   
+}
+
+function showInfo(){
+    document.getElementById("startScreen").style.visibility = "visible";
+    document.getElementById("startScreen").style.opacity = 1;
+    document.getElementsByClassName("startButton").style.visibility = "hidden";
+
 }
 /*
 document.getElementById("person1").style.fill = '#F1DDBF';
